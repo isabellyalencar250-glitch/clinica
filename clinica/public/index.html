@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Sistema Clínica</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="/favicon.png?v=2" />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="/style.css" />
+</head>
+
+<body>
+
+    <main class="container">
+
+        <!-- LOGO -->
+        <header class="titulo-clinica">
+
+            <div class="logo-box">
+                <img
+                    src="/favicon.png"
+                    alt="Logo da Clínica"
+                    class="logo-titulo"
+                />
+            </div>
+
+            <div class="logo-texto">
+                <h1>Sistema da Clínica</h1>
+                <p>Painel Administrativo</p>
+            </div>
+
+        </header>
+
+        <!-- LOGIN -->
+        <section class="login-box">
+
+            <h2>Login</h2>
+
+            <form onsubmit="login(event)">
+
+                <!-- USUÁRIO -->
+                <div class="input-group">
+                    <input
+                        type="text"
+                        id="usuario"
+                        placeholder="Digite seu usuário"
+                        autocomplete="username"
+                        required
+                    />
+                </div>
+
+                <!-- SENHA -->
+                <div class="input-group">
+                    <input
+                        type="password"
+                        id="senha"
+                        placeholder="Digite sua senha"
+                        autocomplete="current-password"
+                        required
+                    />
+                </div>
+
+                <!-- BOTÃO -->
+                <button type="submit" class="btn-login">
+                    Entrar
+                </button>
+
+                <!-- ERRO -->
+                <p id="mensagemErro" class="erro"></p>
+
+            </form>
+
+        </section>
+
+    </main>
+
+    <!-- SCRIPT -->
+    <script src="/script.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paciente</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+
+    <div class="main">
+
+        <div class="form-card">
+
+            <h1>👤 Cadastro de Paciente</h1>
+
+            <form id="formPaciente" class="grid-form">
+
+                <label for="nome">Nome</label>
+                <input id="nome" type="text" placeholder="Nome" required>
+
+                <label for="nascimento">Data de Nascimento</label>
+                <input id="nascimento" type="date" required>
+
+                <label for="cpf">CPF</label>
+                <input id="cpf" type="text" placeholder="CPF" required>
+
+                <label for="telefone">Telefone</label>
+                <input id="telefone" type="text" placeholder="Telefone">
+
+                <label for="endereco">Endereço</label>
+                <textarea id="endereco" placeholder="Endereço"></textarea>
+
+                <button type="submit">
+                    Cadastrar Paciente
+                </button>
+
+            </form>
+
+            <hr>
+
+            <h2>📋 Lista de Pacientes</h2>
+
+            <div class="table-wrapper">
+
+                <table class="tabela-moderna">
+
+                    <thead>
+                        <tr>
+                            <th>Nome</th>
+                            <th>CPF</th>
+                            <th>Telefone</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="listaPacientes">
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <script src="/paciente.js"></script>
+
+</body>
+
+</html>

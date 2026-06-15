@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Administração da Clínica</title>
+
+    <link rel="stylesheet" href="/home.css">
+
+    <!-- ÍCONES -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+           </div>
+
+    <img
+        src="/favicon.png"
+        alt="Logo Clínica"
+        class="logo-titulo"
+    >
+
+</div>
+</head>
+
+<body>
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+
+        <div>
+
+            <div class="logo">
+                <h2>Clínica</h2>
+            </div>
+
+            <nav>
+                <ul>
+
+                    <li>
+                        <a class="active" href="/paciente.html">
+                            <i class="fa-solid fa-user"></i>
+                            Pacientes
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="/medicos.html">
+                            <i class="fa-solid fa-user-doctor"></i>
+                            Médicos
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="/consultas.html">
+                            <i class="fa-solid fa-calendar"></i>
+                            Consultas
+                        </a>
+                    </li>
+
+                </ul>
+            </nav>
+
+        </div>
+
+        <a class="logout" href="#" onclick="logout()">
+            <i class="fa-solid fa-right-from-bracket"></i>
+            Sair
+        </a>
+
+    </aside>
+
+    <!-- MAIN -->
+    <main class="main">
+
+        <!-- TOP -->
+        <header class="topbar">
+            <h1>Administração</h1>
+            <p>Visão geral do sistema da clínica</p>
+        </header>
+
+        <!-- SEARCH (AJUSTADO PRA COMBINAR COM CSS) -->
+        <div class="pesquisa-box">
+
+            <i class="fa-solid fa-magnifying-glass"></i>
+
+            <input
+                type="text"
+                id="pesquisa"
+                placeholder="Pesquisar pacientes, médicos ou consultas..."
+                onkeyup="pesquisarTabela()"
+            >
+
+            <button type="button"
+                onclick="document.getElementById('pesquisa').value=''; pesquisarTabela()">
+
+                <i class="fa-solid fa-xmark"></i>
+
+            </button>
+
+        </div>
+
+        <!-- CARDS -->
+        <section class="cards">
+
+            <div class="card" onclick="mostrarPacientes()">
+                <h3>Pacientes</h3>
+                <p id="totalPacientes">0</p>
+            </div>
+
+            <div class="card" onclick="mostrarMedicos()">
+                <h3>Médicos</h3>
+                <p id="totalMedicos">0</p>
+            </div>
+
+            <div class="card" onclick="mostrarConsultas()">
+                <h3>Consultas</h3>
+                <p id="totalConsultas">0</p>
+            </div>
+
+        </section>
+
+        <!-- TABLE -->
+        <section id="tabelaArea">
+
+            <h2 id="tituloTabela">Selecione uma opção</h2>
+
+            <div class="table-wrapper">
+
+                <table id="tabelaDados">
+
+                    <thead>
+                        <tr id="cabecalho"></tr>
+                    </thead>
+
+                    <tbody id="corpoTabela"></tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <script src="/admin.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Consultas</title>
+
+    <link rel="stylesheet" href="/style.css">
+
+</head>
+
+<body>
+
+    <div class="main">
+
+        <div class="form-card">
+
+            <h1>📅 Agendar Consulta</h1>
+
+            <form id="formConsulta" class="grid-form">
+
+                <div>
+                    <label for="paciente">Paciente</label>
+
+                    <select id="paciente" required>
+                        <option value="">
+                            Selecione um paciente
+                        </option>
+                    </select>
+                </div>
+
+                <div>
+                    <label for="medico">Médico</label>
+
+                    <select id="medico" required>
+                        <option value="">
+                            Selecione um médico
+                        </option>
+                    </select>
+                </div>
+
+                <div>
+                    <label for="data">Data</label>
+
+                    <input
+                        type="date"
+                        id="data"
+                        required
+                    >
+                </div>
+
+                <div>
+                    <label for="hora">Hora</label>
+
+                    <input
+                        type="time"
+                        id="hora"
+                        required
+                    >
+                </div>
+
+                <div class="full-width">
+
+                    <label for="observacoes">
+                        Observações
+                    </label>
+
+                    <textarea
+                        id="observacoes"
+                        placeholder="Observações da consulta"
+                    ></textarea>
+
+                </div>
+
+                <div class="full-width">
+
+                    <button type="submit">
+                        Agendar Consulta
+                    </button>
+
+                </div>
+
+            </form>
+
+            <hr>
+
+            <h2>📋 Lista de Consultas</h2>
+
+            <div class="table-wrapper">
+
+                <table class="tabela-moderna">
+
+                    <thead>
+
+                        <tr>
+                            <th>ID</th>
+                            <th>Paciente</th>
+                            <th>Médico</th>
+                            <th>Data</th>
+                            <th>Status</th>
+                        </tr>
+
+                    </thead>
+
+                    <tbody id="listaConsultas">
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <script src="/consultas.js"></script>
+
+</body>
+
+</html>
