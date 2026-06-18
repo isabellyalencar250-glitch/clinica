@@ -1,6 +1,3 @@
-// 🔥 IMPORTANTE: Carrega as variáveis do arquivo .env ANTES de tudo
-require("dotenv").config()
-
 const express = require("express")
 const path = require("path")
 const session = require("express-session")
@@ -11,7 +8,7 @@ const consultasRoutes = require("./routes/consultas")
 const pacientesRoutes = require("./routes/pacientes")
 const medicosRoutes = require("./routes/medicos")
 
-// Conexão com o banco (agora vai ler o arquivo .env corretamente)
+// Conexão com o banco (agora vai conectar direto no Railway sem depender do .env)
 const connection = require("./database/connection")
 
 const app = express()
@@ -26,7 +23,7 @@ app.use(express.urlencoded({ extended: true }))
 // 🔑 SESSÃO
 // =========================
 app.use(session({
-    secret: "segredo", // No futuro, você pode mudar para process.env.SESSION_SECRET
+    secret: "segredo", 
     resave: false,
     saveUninitialized: false
 }))
@@ -65,7 +62,7 @@ app.use(homeRoutes)
 // 🔐 LOGIN
 // =========================
 app.post("/login", (req, res) => {
-    const { usuario, senha } = req.body
+    const { usuario, userName, senha } = req.body
 
     const sql = `
         SELECT *
